@@ -18,7 +18,7 @@ _.forEach(Array.from(year.by('months')), month => {
     let monthRange = month.range('month')
     let firstDay = monthRange.start.day()
 
-    //console.log(firstDay)
+    console.log(firstDay)
 
     //Create an array of  days in the month - use Array.from(monthRange.by('days'))
     let days= Array.from(monthRange.by('days'))
@@ -29,14 +29,22 @@ _.forEach(Array.from(year.by('months')), month => {
    
         let paddedDays = _.map(days, day => { // Transforms items in the array
         
-            let date = ' ' // TODO: Change this to output a two-digit date use day.format()
+            let date = day.format("DD"); // TODO: Change this to output a two-digit date use day.format()
             
             // TODO: Highlight September 10th in color         
+            if(day.month() == 8 && day.date() == 9)
+            {
+                date = chalk.bgBlue(date)
+            }
             // TODO: Highlight YOUR birthday in color!
+            if(day.month() == 8 && day.date() == 7)
+            {
+                date = chalk.bgGreen(date)
+            }
                 if(day.month() == 0 && day.date() == 19) {
                     date = chalk.bgRed(date)
                     
-                }//my birthday
+                }//my birthday Kirsten's
                 
                 
 
@@ -45,6 +53,7 @@ _.forEach(Array.from(year.by('months')), month => {
     
         
             //TODO: create a for() loopthat loops through month.day()
+
             {
                 //TODO: Append blank spaces (using paddedDays.unshift('  ')) so that the 1st ends up under the right day column 
             }
