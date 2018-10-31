@@ -3,6 +3,7 @@ const _ = require('lodash')
 const chalk = require('chalk')
 const MomentRange = require('moment-range')
 
+
 const moment = MomentRange.extendMoment(M)
 
 //Will create the year
@@ -31,13 +32,19 @@ _.forEach(Array.from(year.by('months')), month => {
         
             let date = day.format("DD"); // TODO: Change this to output a two-digit date use day.format()
             
-            // TODO: Highlight September 10th in color         
+            // TODO: Highlight September 10th in color  
+            //in blue!       
             if(day.month() == 8 && day.date() == 10)
             {
                 date = chalk.bgBlue(date)
             }
+            //Highlight Christmas in Green
+            if(day.month() == 11 && day.date() == 25)
+            {
+                date = chalk.bgGreen(date)
+            }
             // TODO: Highlight YOUR birthday in color!
-            //Zack's Birthday
+            //Zack's Birthday in Green
 
             if(day.month() == 8 && day.date() == 8)
             {
