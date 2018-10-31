@@ -32,12 +32,14 @@ _.forEach(Array.from(year.by('months')), month => {
             let date = day.format("DD"); // TODO: Change this to output a two-digit date use day.format()
             
             // TODO: Highlight September 10th in color         
-            if(day.month() == 8 && day.date() == 9)
+            if(day.month() == 8 && day.date() == 10)
             {
                 date = chalk.bgBlue(date)
             }
             // TODO: Highlight YOUR birthday in color!
-            if(day.month() == 8 && day.date() == 7)
+            //Zack's Birthday
+
+            if(day.month() == 8 && day.date() == 8)
             {
                 date = chalk.bgGreen(date)
             }
@@ -50,19 +52,12 @@ _.forEach(Array.from(year.by('months')), month => {
 
                 return _.padEnd(date, 2)  
         })
-    
-        
             //TODO: create a for() loopthat loops through month.day()
-
+            for(var i = 0; i < month.day(); i++)
             {
                 //TODO: Append blank spaces (using paddedDays.unshift('  ')) so that the 1st ends up under the right day column 
                 paddedDays.unshift(firstDay)
             }
-            
-                
-                          
-           
-    
             paddedDays = _.chunk(paddedDays, 7) // Changes the array of days to be an array of weeks, each week containing 7 items from the days array [["  ","  ","  ",01,02,03,04],[05,06...]]
     
                 
@@ -70,8 +65,9 @@ _.forEach(Array.from(year.by('months')), month => {
             paddedDays.forEach(week => { //[ , , , 01, 02]
             
                 // TODO: Join the days together to form one string representing the week
-                // TODO: console.log it use week.join('  ')
-                console.log()
+                
+                // TODO: console.log it use week.join('  ')***********still incorrect
+                console.log(week.join('days'))
             })
         
         console.log('') // Puts a blank line between each month
