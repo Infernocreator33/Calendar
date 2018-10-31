@@ -43,6 +43,11 @@ _.forEach(Array.from(year.by('months')), month => {
             {
                 date = chalk.bgGreen(date)
             }
+            //highlight valentines day
+            if(day.month() == 1 && day.date() == 14)
+            {
+                date = chalk.bgRed(date)
+            }
             // TODO: Highlight YOUR birthday in color!
             //Zack's Birthday in Green
 
