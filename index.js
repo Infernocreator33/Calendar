@@ -18,7 +18,7 @@ _.forEach(Array.from(year.by('months')), month => {
     let monthRange = month.range('month')
     let firstDay = monthRange.start.day()
 
-    console.log(firstDay)
+    //console.log(firstDay)
 
     //Create an array of  days in the month - use Array.from(monthRange.by('days'))
     let days= Array.from(monthRange.by('days'))
@@ -56,6 +56,7 @@ _.forEach(Array.from(year.by('months')), month => {
 
             {
                 //TODO: Append blank spaces (using paddedDays.unshift('  ')) so that the 1st ends up under the right day column 
+                paddedDays.unshift(firstDay)
             }
             
                 
